@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+:root {
+  --transition-time: 0.5s;
+  --image-width: 360px;
+  --image-height: 1080px;
+  --button-width: 240px;
+  --button-height: 60px;
+  --button-color-red: #ec0b36;
+  --button-bg-color-red: #451c24;
+  --button-color-purple: #730bec;
+  --button-bg-color-purple: #2e1f3d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  width: var(--button-width);
+  height: var(--button-height);
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  background: var(--button-bg-color-red);
+  border: 0;
+  letter-spacing: 2px;
+  margin: 20px;
+  transition: var(--transition-time);
+  cursor: pointer;
+  border: 2px solid var(--button-color-red);
+}
+button:nth-child(2) {
+  background: var(--button-bg-color-purple);
+  border: 2px solid var(--button-color-purple);
+}
+
+button:hover,
+button:focus {
+  background: var(--button-color-red) url(images/pixel.png) repeat;
+  transition-delay: var(--transition-time);
+  animation: animate var(--transition-time) steps(8) forwards;
+}
+button:nth-child(2):hover,
+button:nth-child(2):focus {
+  background: var(--button-color-purple) url(images/pixel2.png) repeat;
+}
+
+@keyframes animate {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: calc(
+      (var(--image-height) / 2 * -1) - (var(--button-height))
+    );
+  }
+}
