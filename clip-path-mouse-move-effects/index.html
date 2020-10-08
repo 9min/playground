@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clip Path Mouse Move Effects</title>
+    <link rel="stylesheet" href="../common/reset.css" />
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <p>Hello</p>
+      <p>How it is?</p>
+      <div class="circle"></div>
+    </main>
+    <script>
+      const doc = document.documentElement;
+      doc.addEventListener("mousemove", (event) => {
+        doc.style.setProperty("--x", `${event.clientX}px`);
+        doc.style.setProperty("--y", `${event.clientY}px`);
+      });
+    </script>
+  </body>
+</html>
