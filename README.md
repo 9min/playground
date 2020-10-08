@@ -3,7 +3,8 @@
 - Creative CSS Pixel Button Hover Animation Effects - [Link](https://9min.github.io/playground/pixel-button-hover-effects)
 - Full Page Scrolling Effects - [Link](https://9min.github.io/playground/full-page-scrolling-effects)
 - Image Reveal On Scratch Effects - [Link](https://9min.github.io/playground/image-reveal-on-scratch-effects)
-- CSS Clip-path & Vanilla Javascript Mousemove Effects - [Link](https://9min.github.io/playground/clip-path-mouse-move-effects)
+- Clip-path Mousemove Effects - [Link](https://9min.github.io/playground/clip-path-mouse-move-effects)
+- Circle Text Animation Effects - [Link](https://9min.github.io/playground/circle-text-animation-effects)
 
 참고 사이트
 

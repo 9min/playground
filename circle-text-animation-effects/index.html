@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circle Text Animation Effects</title>
+    <link rel="stylesheet" href="../common/reset.css" />
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <p class="circle">Circle-Text-Animation-Effects-</p>
+    </main>
+    <script>
+      const circle = document.querySelector(".circle");
+      const splitTexts = circle.innerHTML.split("").map(
+        (text, index) =>
+          `<span class="char" style="--char-index:${index}"
+      >${text}</span>`
+      );
+      circle.innerHTML = splitTexts.join("");
+    </script>
+  </body>
+</html>
