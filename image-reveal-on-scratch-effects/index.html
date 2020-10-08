@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Reveal On Scratch Effects</title>
+    <link rel="stylesheet" href="../common/reset.css" />
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script>
+      const body = document.querySelector("body");
+      const maxCount = 500;
+      let count = 0;
+      document.addEventListener("mousemove", (event) => {
+        const bubbles = document.createElement("span");
+        bubbles.setAttribute("id", `scratch${++count}`);
+        bubbles.style.left = `${event.offsetX - 100}px`;
+        bubbles.style.top = `${event.offsetY - 100}px`;
+        body.appendChild(bubbles);
+        if (count > maxCount) {
+          body.removeChild(
+            document.querySelector(`#scratch${count - maxCount}`)
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
