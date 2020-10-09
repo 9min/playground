@@ -1,0 +1,82 @@
+:root {
+  --color-green: #0f0;
+  --color-pink: #f0f;
+  --circle-width: 50vw;
+  --circle-height: 50vw;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.circle {
+  position: relative;
+  width: var(--circle-width);
+  height: var(--circle-height);
+  max-width: 500px;
+  max-height: 500px;
+  filter: url(#wavy) blur(1px);
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  border: 20px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 50px var(--color-green), inset 0 0 50px var(--color-green);
+  -webkit-box-reflect: below 10px
+    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.11));
+  animation: animate 10s linear infinite;
+}
+
+.circle:nth-child(2):before {
+  animation-delay: -5s;
+}
+
+svg {
+  width: 0;
+  height: 0;
+}
+
+@keyframes animate {
+  0% {
+    box-shadow: 0 0 50px var(--color-green), inset 0 0 50px var(--color-green);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    box-shadow: 0 0 30px var(--color-green), inset 0 0 30px var(--color-green);
+  }
+  40% {
+    box-shadow: 0 0 70px var(--color-green), inset 0 0 70px var(--color-green);
+  }
+  60% {
+    box-shadow: 0 0 40px var(--color-green), inset 0 0 40px var(--color-green);
+  }
+  80% {
+    box-shadow: 0 0 80px var(--color-green), inset 0 0 80px var(--color-green);
+  }
+  100% {
+    box-shadow: 0 0 50px var(--color-green), inset 0 0 50px var(--color-green);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --circle-width: 100vw;
+    --circle-height: 100vw;
+  }
+
+  .circle:nth-child(2) {
+    display: none;
+  }
+}

@@ -5,6 +5,7 @@
 - Image Reveal On Scratch Effects - [Link](https://9min.github.io/playground/image-reveal-on-scratch-effects)
 - Clip-path Mousemove Effects - [Link](https://9min.github.io/playground/clip-path-mouse-move-effects)
 - Circle Text Animation Effects - [Link](https://9min.github.io/playground/circle-text-animation-effects)
+- Ring Of Fire Effects - [Link](https://9min.github.io/playground/ring-of-fire-effects)
 
 참고 사이트
 
