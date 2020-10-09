@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:200,300,400,500,600,700,800,900&display=swap");
 
+:root {
+  --x: -50px;
+  --y: -50px;
+}
+
 body {
   font-family: "Quicksand", sans-serif;
+  cursor: none;
 }
 
 main {
@@ -21,7 +27,7 @@ p {
   font-size: 14rem;
   font-weight: 300;
   color: #111;
-  cursor: default;
+  cursor: none;
 }
 
 .circle {
