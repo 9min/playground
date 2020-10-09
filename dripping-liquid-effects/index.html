@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dripping Liquid Effects</title>
+    <link rel="stylesheet" href="../common/reset.css" />
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Dripping Liquid Effects</h1>
+    <main>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+    </main>
+    <!--
+    <svg>
+      <defs>
+        <filter id="gooey">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+          <feColorMatrix
+            in="name"
+            mode="matrix"
+            values="10 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 30 -15"
+          />
+          <feBlend in="SourceGraphic" />
+        </filter>
+      </defs>
+    </svg>
+    -->
+    <script>
+      const random = (n) => Math.floor(Math.random() * n);
+      const elMain = document.querySelector("main");
+      new Array(20).fill("").forEach((_, index) => {
+        const elGooey = document.createElement("div");
+        const size = Math.max(random(window.innerWidth * 0.1) + 30, 50);
+        const top = `${-size}px`;
+        elGooey.className = "gooey";
+        elGooey.style.left = `calc(${random(100)}vw - ${size * 0.5}px)`;
+        elGooey.style.top = top;
+        elGooey.style.width = `${size}px`;
+        elGooey.style.height = `${size}px`;
+        elGooey.style.cssText += `--delay: ${index * 0.2}s`;
+        elGooey.style.cssText += `--speed: ${size * 0.1}s`;
+        elGooey.style.cssText += `--top: ${top}`;
+        elMain.appendChild(elGooey);
+      });
+    </script>
+  </body>
+</html>
