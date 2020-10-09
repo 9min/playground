@@ -36,19 +36,20 @@
     <script>
       const random = (n) => Math.floor(Math.random() * n);
       const elMain = document.querySelector("main");
-      new Array(20).fill("").forEach((_, index) => {
-        const elGooey = document.createElement("div");
-        const size = Math.max(random(window.innerWidth * 0.1) + 30, 50);
+      const liquidLength = Math.min(Math.floor(window.innerWidth * 0.03), 20);
+      new Array(liquidLength).fill("").forEach((_, index) => {
+        const elLiquid = document.createElement("div");
+        const size = Math.max(random(window.innerWidth * 0.15) + 30, 50);
         const top = `${-size}px`;
-        elGooey.className = "gooey";
-        elGooey.style.left = `calc(${random(100)}vw - ${size * 0.5}px)`;
-        elGooey.style.top = top;
-        elGooey.style.width = `${size}px`;
-        elGooey.style.height = `${size}px`;
-        elGooey.style.cssText += `--delay: ${index * 0.2}s`;
-        elGooey.style.cssText += `--speed: ${size * 0.1}s`;
-        elGooey.style.cssText += `--top: ${top}`;
-        elMain.appendChild(elGooey);
+        elLiquid.className = "liquid";
+        elLiquid.style.left = `calc(${random(100)}vw - ${size * 0.5}px)`;
+        elLiquid.style.top = top;
+        elLiquid.style.width = `${size}px`;
+        elLiquid.style.height = `${size}px`;
+        elLiquid.style.cssText += `--delay: ${index * 0.5}s`;
+        elLiquid.style.cssText += `--speed: ${size * 0.1}s`;
+        elLiquid.style.cssText += `--top: ${top}`;
+        elMain.appendChild(elLiquid);
       });
     </script>
   </body>
