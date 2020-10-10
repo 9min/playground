@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
+:root {
+  --bounce: 40px;
+}
+
 body {
   font-family: "Popppins", sans-serif;
 }
@@ -72,11 +76,15 @@ h1 {
     top: var(--top);
   }
   100% {
-    top: calc(100vh - 40px);
+    top: calc(100vh - var(--bounce));
   }
 }
 
 @media (max-width: 720px) {
+  :root {
+    --bounce: 20px;
+  }
+
   h1 {
     font-size: 1.8rem;
   }
