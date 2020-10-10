@@ -35,7 +35,8 @@
     -->
     <script>
       const getRandom = (n) => Math.floor(Math.random() * n);
-      const getLeft = (size) => `calc(${getRandom(100)}vw - ${size * 0.5}px)`;
+      const getRandomLeft = (size) =>
+        `calc(${getRandom(100)}vw - ${size * 0.5}px)`;
       const elMain = document.querySelector("main");
       const liquidLength = Math.min(Math.floor(window.innerWidth * 0.03), 20);
       new Array(liquidLength).fill("").forEach((_, index) => {
@@ -43,7 +44,7 @@
         const top = `${-size}px`;
         const elLiquid = document.createElement("div");
         elLiquid.className = "liquid";
-        elLiquid.style.left = getLeft(size);
+        elLiquid.style.left = getRandomLeft(size);
         elLiquid.style.top = top;
         elLiquid.style.width = `${size}px`;
         elLiquid.style.height = `${size}px`;
@@ -51,7 +52,7 @@
         elLiquid.style.cssText += `--top: ${top}`;
         elLiquid.style.cssText += `--delay: ${index * 0.5}s`;
         elLiquid.addEventListener("animationiteration", (event) => {
-          event.target.style.left = getLeft(size);
+          event.target.style.left = getRandomLeft(size);
         });
         elMain.appendChild(elLiquid);
       });
