@@ -17,6 +17,7 @@
       const mf = (n) => Math.floor(n);
       const r = (n) => Math.random() * n;
       const scene = document.querySelector(".scene");
+      const rocket = document.querySelector(".rocket");
       const makeAnimation = () => {
         let windowWidth = window.innerWidth;
         const count = mf(windowWidth * 0.1);
@@ -33,10 +34,13 @@
         });
       };
       window.addEventListener("resize", () => {
-        const rocket = document.querySelector(".rocket");
         scene.innerHTML = "";
         scene.appendChild(rocket);
         makeAnimation();
+      });
+      document.addEventListener("mousemove", (event) => {
+        rocket.style.left = `calc(${event.clientX}px - 2rem)`;
+        rocket.style.top = `calc(${event.clientY}px - 2rem)`;
       });
       makeAnimation();
     </script>
