@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket Animation Effects</title>
+    <link rel="stylesheet" href="../common/reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="scene">
+      <div class="rocket">
+        <img src="images/rocket.png" alt="rocket" />
+      </div>
+    </main>
+    <script>
+      const mf = (n) => Math.floor(n);
+      const r = (n) => Math.random() * n;
+      const scene = document.querySelector(".scene");
+      const makeAnimation = () => {
+        let windowWidth = window.innerWidth;
+        const count = mf(windowWidth * 0.1);
+        new Array(count).fill("").forEach((_, index) => {
+          const star = document.createElement("i");
+          const left = mf(r(windowWidth));
+          const duration = r(1);
+          const height = mf(r(100));
+          star.style.left = `${left}px`;
+          star.style.width = "1px";
+          star.style.height = `${height}px`;
+          star.style.animationDuration = `${duration}s`;
+          scene.appendChild(star);
+        });
+      };
+      window.addEventListener("resize", () => {
+        const rocket = document.querySelector(".rocket");
+        scene.innerHTML = "";
+        scene.appendChild(rocket);
+        makeAnimation();
+      });
+      makeAnimation();
+    </script>
+  </body>
+</html>
