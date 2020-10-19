@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eyes Follow Mouse Cursor Effects</title>
+    <link rel="stylesheet" href="../common/reset.css" />
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const body = document.querySelector("body");
+      const eyes = document.querySelectorAll(".eye");
+      const eyeMove = (event) => {
+        const { touches } = event;
+        const pageX = touches ? touches[0].pageX : event.pageX;
+        const pageY = touches ? touches[0].pageY : event.pageY;
+        eyes.forEach((eye) => {
+          const eyeBoundingClientRect = eye.getBoundingClientRect();
+          const left = eyeBoundingClientRect.left;
+          const top = eyeBoundingClientRect.top;
+          const halfWidth = eye.clientWidth * 0.5;
+          const halfHeight = eye.clientHeight * 0.5;
+          const x = left + halfWidth;
+          const y = top + halfHeight;
+          const radian = Math.atan2(pageX - x, pageY - y);
+          const rotate = radian * (-180 / Math.PI) + 270;
+          eye.style.transform = `rotate(${rotate}deg)`;
+        });
+      };
+      body.addEventListener("touchmove", eyeMove);
+      body.addEventListener("mousemove", eyeMove);
+    </script>
+  </body>
+</html>

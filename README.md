@@ -8,6 +8,7 @@
 - Ring Of Fire Effects - [Link](https://9min.github.io/playground/ring-of-fire-effects)
 - Dripping Liquid Effects - [Link](https://9min.github.io/playground/dripping-liquid-effects)
 - Rocket Animation Effects - [Link](https://9min.github.io/playground/rocket-animation-effects)
+- Eyes Follow Mouse Cursor Effects - [Link](https://9min.github.io/playground/eyes-follow-mouse-cursor-effects)
 
 참고 사이트
 
