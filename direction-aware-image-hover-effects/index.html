@@ -54,7 +54,6 @@
       console.log(event, event.target.getBoundingClientRect().x);
       const x = event.clientX - boundingClientRect.x;
       const y = event.clientY - boundingClientRect.y;
-      console.log(event.target.querySelector('.circle'), x, y);
       event.target.querySelector('.circle').style.cssText = `top: ${y}px; left: ${x}px`;
     }
     cards.forEach((card) => {
