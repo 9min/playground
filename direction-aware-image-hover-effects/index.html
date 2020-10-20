@@ -51,7 +51,6 @@
     const cards = document.querySelectorAll('.card');
     const onMouseEffect = (event) => {
       const boundingClientRect = event.target.getBoundingClientRect();
-      console.log(event, event.target.getBoundingClientRect().x);
       const x = event.clientX - boundingClientRect.x;
       const y = event.clientY - boundingClientRect.y;
       event.target.querySelector('.circle').style.cssText = `top: ${y}px; left: ${x}px`;
