@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direction Aware Image Hover Effects</title>
+  <link rel="stylesheet" href="../common/reset.css" />
+  <link rel="stylesheet" href="../common/common.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1 class="visually-hidden">Direction Aware Image Hover Effects</h1>
+  <ul class="container">
+    <li class="item">
+      <div class="card">
+        <div class="circle"></div>
+        <div class="content">
+          <h2>Card Title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab deserunt minus eaque quas ex sed quaerat
+            necessitatibus, explicabo perspiciatis et unde ea doloremque eius nostrum quod aliquam cupiditate delectus
+            aliquid.</p>
+        </div>
+      </div>
+    </li>
+    <li class="item">
+      <div class="card">
+        <div class="circle"></div>
+        <div class="content">
+          <h2>Card Title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab deserunt minus eaque quas ex sed quaerat
+            necessitatibus, explicabo perspiciatis et unde ea doloremque eius nostrum quod aliquam cupiditate delectus
+            aliquid.</p>
+        </div>
+      </div>
+    </li>
+    <li class="item">
+      <div class="card">
+        <div class="circle"></div>
+        <div class="content">
+          <h2>Card Title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab deserunt minus eaque quas ex sed quaerat
+            necessitatibus, explicabo perspiciatis et unde ea doloremque eius nostrum quod aliquam cupiditate delectus
+            aliquid.</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const onMouseEffect = (event) => {
+      const boundingClientRect = event.target.getBoundingClientRect();
+      console.log(event, event.target.getBoundingClientRect().x);
+      const x = event.clientX - boundingClientRect.x;
+      const y = event.clientY - boundingClientRect.y;
+      console.log(event.target.querySelector('.circle'), x, y);
+      event.target.querySelector('.circle').style.cssText = `top: ${y}px; left: ${x}px`;
+    }
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', onMouseEffect);
+      card.addEventListener('mouseleave', onMouseEffect);
+    });
+  </script>
+</body>
+
+</html>

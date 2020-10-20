@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background: #28102d;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  margin: 15px;
+  width: 320px;
+  height: 420px;
+  overflow: hidden;
+  background-position: center center;
+}
+
+.card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.container .item {
+  display: inline-block;
+}
+
+.container .item:nth-child(1) .card {
+  background-image: url(./images/bg1.jpg);
+  background-size: cover;
+}
+
+.container .item:nth-child(2) .card {
+  background-image: url(./images/bg2.jpg);
+  background-size: cover;
+}
+
+.container .item:nth-child(3) .card {
+  background-image: url(./images/bg3.jpg);
+  background-size: cover;
+}
+
+.card .content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 40px;
+  color: #fff;
+  box-sizing: border-box;
+  visibility: hidden;
+  cursor: default;
+  line-height: 1.5;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card .circle {
+  position: absolute;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  opacity: 0.95;
+  background: #9c27b0;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.container .item:nth-child(1) .circle {
+  background: #e57b75;
+}
+
+.container .item:nth-child(2) .circle {
+  background: #087097;
+}
+
+.container .item:nth-child(3) .circle {
+  background: #d59f32;
+}
+
+.card:hover .circle {
+  width: 1200px;
+  height: 1200px;
+}

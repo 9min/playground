@@ -9,6 +9,7 @@
 - Dripping Liquid Effects - [Link](https://9min.github.io/playground/dripping-liquid-effects)
 - Rocket Animation Effects - [Link](https://9min.github.io/playground/rocket-animation-effects)
 - Eyes Follow Mouse Cursor Effects - [Link](https://9min.github.io/playground/eyes-follow-mouse-cursor-effects)
+- Direction Aware Image Hover Effects - [Link](https://9min.github.io/playground/direction-aware-image-hover-effects)
 
 참고 사이트
 
