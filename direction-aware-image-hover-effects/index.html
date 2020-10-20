@@ -49,15 +49,19 @@
   </ul>
   <script>
     const cards = document.querySelectorAll('.card');
-    const onMouseEffect = (event) => {
+    const onAnimation = (event) => {
+      const { touches } = event;
+      const clientX = touches ? touches[0].clientX : event.clientX;
+      const clientY = touches ? touches[0].clientY : event.clientY;
       const boundingClientRect = event.target.getBoundingClientRect();
-      const x = event.clientX - boundingClientRect.x;
-      const y = event.clientY - boundingClientRect.y;
+      const x = clientX - boundingClientRect.x;
+      const y = clientY - boundingClientRect.y;
       event.target.querySelector('.circle').style.cssText = `top: ${y}px; left: ${x}px`;
     }
     cards.forEach((card) => {
-      card.addEventListener('mouseenter', onMouseEffect);
-      card.addEventListener('mouseleave', onMouseEffect);
+      card.addEventListener('mouseenter', onAnimation);
+      card.addEventListener('mouseleave', onAnimation);
+      card.addEventListener("touchstart", onAnimation);
     });
   </script>
 </body>
